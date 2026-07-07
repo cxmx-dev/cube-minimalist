@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wireframe Cube</title>
+<style>html,body{margin:0;overflow:hidden;background:#000}canvas{display:block}</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+const ctx=c.getContext('2d');
+const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+const e=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+let ax=0,ay=0;
+onresize=()=>{c.width=innerWidth;c.height=innerHeight};onresize();
+function rot([x,y,z],ax,ay){
+  let c=Math.cos(ay),s=Math.sin(ay);[x,z]=[x*c-z*s,x*s+z*c];
+  c=Math.cos(ax);s=Math.sin(ax);return[x,y*c-z*s,y*s+z*c];
+}
+function proj([x,y,z]){const s=120/(3+z);return[c.width/2+x*s,c.height/2-y*s]}
+(function draw(){
+  ax+=.01;ay+=.015;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,c.width,c.height);
+  ctx.strokeStyle='#fff';ctx.beginPath();
+  const p=v.map(pt=>proj(rot(pt,ax,ay)));
+  for(const[a,b]of e){ctx.moveTo(...p[a]);ctx.lineTo(...p[b])}
+  ctx.stroke();requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

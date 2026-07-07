@@ -1,0 +1,22 @@
+# --- hub deploy + local docs (never published) ---
+_project.ps1
+ensure-publish.ps1
+preview.ps1
+push-pages.ps1
+start.ps1
+docs/
+PLAN.md
+NOTES.md
+NOTES.txt
+README.dev.md
+iteration-log.md
+*convo*
+mcps/
+scripts/
+tests/
+pics/
+
+# OS / tooling
+.DS_Store
+Thumbs.db
+*.log

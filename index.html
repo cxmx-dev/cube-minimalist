@@ -2,21 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
 <title>cube-minimalist</title>
-<style>body{font-family:system-ui,sans-serif;background:#0a0a0a;color:#ccc;margin:2rem;line-height:1.5}a{color:#8f8}h1{font-weight:500}</style>
+<script src="device.js"></script>
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #ccc;
+    margin: 0;
+    padding: 1.25rem 1.25rem max(1.25rem, env(safe-area-inset-bottom));
+    line-height: 1.5;
+  }
+  a {
+    color: #8f8;
+    display: block;
+    padding: 0.65rem 0.75rem;
+    margin: 0.35rem 0;
+    border: 1px solid #222;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    min-height: 2.75rem;
+  }
+  a:active, a:hover { border-color: #484; background: #111; }
+  h1 { font-weight: 500; font-size: 1.35rem; }
+  p { margin: 0.5rem 0 1rem; }
+  .note { opacity: .7; font-size: .9rem; }
+  @media (min-width: 720px) {
+    body { margin: 2rem; max-width: 36rem; }
+  }
+</style>
 </head>
 <body>
 <h1>cube-minimalist</h1>
-<p>Wireframe cube demos — pick a variant:</p>
-<ul>
-<li><a href="black-background-index.html">Readable — dark (1051 B)</a></li>
-<li><a href="white-background-index.html">Readable — light (1051 B)</a></li>
-<li><a href="lessthan1139black.html">Code-golf fullscreen — dark (684 B)</a></li>
-<li><a href="lessthan1139white.html">Code-golf fullscreen — light (684 B)</a></li>
-<li><a href="golf600black.html">Code-golf ~600 B — dark (615 B)</a></li>
-<li><a href="golf600white.html">Code-golf ~600 B — light (615 B)</a></li>
+<p>Wireframe cube demos — pick a variant (auto-fits phone, tablet, desktop):</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li><a href="black-background-index.html">Readable — dark</a></li>
+<li><a href="white-background-index.html">Readable — light</a></li>
+<li><a href="lessthan1139black.html">Code-golf fullscreen — dark</a></li>
+<li><a href="lessthan1139white.html">Code-golf fullscreen — light</a></li>
+<li><a href="golf600black.html">Code-golf ~600 B — dark</a></li>
+<li><a href="golf600white.html">Code-golf ~600 B — light</a></li>
 </ul>
-<p style="opacity:.7;font-size:.9rem">webpcap canvas REC: run local <code>Repos\webpcap\build.ps1</code>, open a demo above, F12 for <code>[webpcap] canvas helper ready</code>, then <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>PrtSc</kbd> twice.</p>
+<p class="note">Touch: demos fill the screen. Desktop: mouse + resize. webpcap canvas REC is a local Windows tool (see webpcap repo).</p>
 </body>
 </html>

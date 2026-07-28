@@ -14,6 +14,8 @@ USER-*.md
 *convo*
 mcps/
 scripts/
+!scripts/sanitize-timezones.sh
+!scripts/sanitize-timezones.ps1
 tests/
 pics/
 

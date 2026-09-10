@@ -1,0 +1,12 @@
+docs/
+mcps/
+scripts/
+!scripts/sanitize-timezones.sh
+!scripts/sanitize-timezones.ps1
+tests/
+pics/
+
+# OS / tooling
+.DS_Store
+Thumbs.db
+*.log
